@@ -21,7 +21,7 @@ import pickle
 import cv2
 import os
 
-# 파라메터 구문 분석
+# 파라미터 구문 분석
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", required=True, help="path to input dataset")
 ap.add_argument("-m", "--model", type=str, required=True, help="path to trained model")
@@ -61,7 +61,7 @@ labels = to_categorical(labels, 2)
 # 훈련용 데이터와 테스트 데이터의 분할을 80:20로 분할
 (trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.2, random_state=42)
 
-# 데이터 확장 위한 학습 이미지 생성기 구성
+# 데이터 augmentation 위한 학습 이미지 생성기 구성
 aug = ImageDataGenerator(rotation_range=20, zoom_range=0.15,
 	width_shift_range=0.2, height_shift_range=0.2, shear_range=0.15,
 	horizontal_flip=True, fill_mode="nearest")
