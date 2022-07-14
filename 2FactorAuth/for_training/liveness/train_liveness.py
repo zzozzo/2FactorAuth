@@ -58,7 +58,7 @@ le = LabelEncoder()
 labels = le.fit_transform(labels)
 labels = to_categorical(labels, 2)
 
-# 훈련용 데이터와 테스트 데이터의 분할을 75:25로 분할
+# 훈련용 데이터와 테스트 데이터의 분할을 80:20로 분할
 (trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.2, random_state=42)
 
 # 데이터 확장 위한 학습 이미지 생성기 구성
